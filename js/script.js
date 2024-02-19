@@ -6,6 +6,7 @@ let dragDropText = document.querySelector('h2');
 let button = document.querySelector('button');
 let input = document.querySelector('#input-file');
 let preview = document.querySelector('#preview');
+let form = document.querySelector('form');
 
 // Array de eventos que prevenimos en el dropArea
 let events_preventDefault = ['dragover', 'dragleave', 'drop'];
@@ -48,10 +49,24 @@ input.addEventListener("change", function() {
     let inputFiles = input.files;
     files = files.concat(Array.from(inputFiles));
     showFiles();
+    form.submit();
+});
+
+// Event Listener submit del form
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+    console.log(e)
+    const dataTransfer = new DataTransfer();
+    files.forEach(file=>{
+        dataTransfer.items.add(file);
+    })
+    input.files = dataTransfer.files;
+    form.submit();
 });
 
 // Función que previsualiza los ficheros que hemos añadido
 function showFiles() {
+    preview.innerHTML = ""; // Vaciamos el preview
     // Drop Area vuelve a la situación inicial
     dropArea.classList.remove("active");
     dragDropText.textContent = "Drag & Drop files";
@@ -69,8 +84,8 @@ function processFile(file, index) {
     const docType = file.type; // Variable donde se almacens la extensión del archivo
 
     if (!validExtensions.includes(docType)) {
-        console.log(`El archivo "${file.name}" no es válido!`)
-        removeBtn(index); // Removemos el archivo no válido
+        console.log(`El archivo "${file.name}" no es válido!`);
+        files.splice(index, 1); // Removemos el archivo no válido
     } else {
         let reader = new FileReader();
         reader.readAsDataURL(file); // Leemos el contenido del archivo
@@ -90,6 +105,5 @@ function processFile(file, index) {
 
 function removeBtn(i) {
     files.splice(i, 1);
-    preview.innerHTML = ""; // Vaciamos el preview
     showFiles();
 }
