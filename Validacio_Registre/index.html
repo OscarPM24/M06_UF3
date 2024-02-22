@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validació del Registre</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="">Nom:<br>
+                <input type="text" id="nom" name="nom" required><br>
+                <span id="nomMsg"></span>
+            </label><br>
+            
+            <label for="lname">Correo:<br>
+                <input type="text" id="email" name="email" required><br>
+                <span id="emailMsg"></span>
+            </label><br> 
+            
+            <label for="fname">Contraseña:<br>
+                <input type="text" id="password" name="password" required><br>
+                <ul id="passwordMsg">
+                    <li id="li_0">8 carácteres como mínimo</li>
+                    <li id="li_1">1 letra mayúscula</li>
+                    <li id="li_2">1 letra minúscula</li>
+                    <li id="li_3">1 número</li>
+                    <li id="li_4">1 carácter especial</li>
+                </ul>
+            </label><br>
+                
+            <label for="lname">Repetir Contraseña:<br>
+                <input type="text" id="repeat" name="repeat" required><br>
+                <span id="repeatMsg"></span>
+            </label><br>
+                
+            <label for="lname">Codigo Postal:<br>
+                <input type="text" id="postal" name="postal" required><br>
+                <span id="postalMsg"></span>
+            </label><br>
+
+            <br><input type="submit" value="Submit">
+        </div>
+    </form>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
