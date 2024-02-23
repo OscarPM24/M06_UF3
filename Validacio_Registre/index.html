@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validació del Registre</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <form>
+    <form id="form">
         <div>
             <label for="">Nom:<br>
-                <input type="text" id="nom" name="nom" required><br>
-                <span id="nomMsg"></span>
+                <input type="text" id="nom" name="nom"><br>
+                <span hidden id="nomMsg">Error: El campo no puede estar vacío!</span>
             </label><br>
             
             <label for="lname">Correo:<br>
-                <input type="text" id="email" name="email" required><br>
-                <span id="emailMsg"></span>
+                <input type="text" id="email" name="email"><br>
+                <span hidden id="emailMsg">Error: Correo no válido!</span>
             </label><br> 
             
             <label for="fname">Contraseña:<br>
-                <input type="text" id="password" name="password" required><br>
-                <ul id="passwordMsg">
+                <input type="text" id="password" name="password"><br>
+                <ul id="passwordMsg" hidden>
                     <li id="li_0">8 carácteres como mínimo</li>
                     <li id="li_1">1 letra mayúscula</li>
                     <li id="li_2">1 letra minúscula</li>
@@ -30,16 +31,16 @@
             </label><br>
                 
             <label for="lname">Repetir Contraseña:<br>
-                <input type="text" id="repeat" name="repeat" required><br>
-                <span id="repeatMsg"></span>
+                <input type="text" id="repeat" name="repeat"><br>
+                <span hidden id="repeatMsg">Error: Las contraseñas no son iguales!</span>
             </label><br>
                 
             <label for="lname">Codigo Postal:<br>
-                <input type="text" id="postal" name="postal" required><br>
-                <span id="postalMsg"></span>
+                <input type="text" id="postal" name="postal"><br>
+                <span hidden id="postalMsg">Error: El campo no puede estar vacío!</span>
             </label><br>
 
-            <br><input type="submit" value="Submit">
+            <br><input type="submit" value="Submit"><br>
         </div>
     </form>
 
