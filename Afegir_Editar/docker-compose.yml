@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql_m6
+    environment:
+      MYSQL_ROOT_PASSWORD: system
+      MYSQL_DATABASE: m6
+      MYSQL_USER: oscar
+      MYSQL_PASSWORD: oscar
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin-container
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: system
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
+volumes:
+  mysql_data:
