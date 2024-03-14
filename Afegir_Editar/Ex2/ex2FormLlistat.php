@@ -41,12 +41,13 @@ $conn->close();
         <div class="col">
             <h2 class="mb-3">Formulari</h2>
 
-            <form action="ex2AddEdit.php" method="POST">
+            <form id="form" action="ex2AddEdit.php" method="POST">
                 <div class="form-group mb-2">
                     <input type="text" class="form-control" id="nomProducte" name="nomProducte" placeholder="Nom" value="">
                 </div>
                 
                 <input type="hidden" name="addEdit" id="addEdit" value="0"/>
+                <input type="hidden" name="remove" id="remove">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form> 
         </div>
@@ -107,15 +108,10 @@ $conn->close();
         let btnRemove = document.querySelectorAll(".btnRemove");
         btnRemove.forEach(el=>{
             el.addEventListener("click", function(){
-                let formData = new FormData();
-                formData.append("id", this.getAttribute("idProd"));
-
-                let options = {
-                        method: 'POST',
-                        body: formData
-                    }
-
-                fetch("ex2Remove.php", options)
+                let form = document.getElementById("form");
+                document.getElementById("remove").value = 1;
+                document.getElementById("addEdit").value = this.getAttribute("idProd");
+                form.submit();
             })
         })
     </script>
