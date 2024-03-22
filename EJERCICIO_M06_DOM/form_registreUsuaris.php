@@ -74,7 +74,7 @@
 			<button class="btn btn-primary" type="submit">Registrar</button>
 		</form>
 	</div>
-	<script src="js/functions.js"></script>
+	<script src="js/functions_usuaris.js"></script>
 
 </body>
 </html>

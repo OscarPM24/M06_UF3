@@ -23,6 +23,7 @@ findLoc.addEventListener("click", geolocalitza);
 
 // EventListener que recoje tus coordenadas actuales y envia el mapa hacia esa posición, pone un marker y cambia el zoom
 ubicacion.addEventListener("click", function() {
+
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             let pos = {
@@ -32,6 +33,9 @@ ubicacion.addEventListener("click", function() {
 
             map.setCenter(pos);
             map.setZoom(9);
+
+            document.getElementById("latitude").value = pos.lat;
+            document.getElementById("longitude").value = pos.lng;
             
             let marker = createMarker(pos, map, "./marker.png");
         });

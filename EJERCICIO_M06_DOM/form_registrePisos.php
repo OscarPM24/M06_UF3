@@ -8,7 +8,6 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 	<!-- <link rel="stylesheet" href="css/style.css"> -->
-	<script src="js/functions.js"></script>
 </head>
 
 <body>
@@ -21,20 +20,20 @@
 					<div class="form-row mt-5 mb-4">
 						<div class="col-8">
 							<label for="">Nom*</label>
-							<input type="text" class="form-control" id="" value="" name="">
+							<input type="text" class="form-control" id="nom_pis" value="" name="">
 						</div>
 
 						<div class="col-4">
 							<label for="">Preu*</label>
-							<input type="text" class="form-control" id="" value="" name="">
+							<input type="text" class="form-control" id="preu_pis" value="" name="">
 						</div>	
 					</div>
 					
 					<div class="form-row mb-4">
 						<div class="col-4">
 							<label for="">Via</label>
-							<select class="custom-select">
-								<option selected>Open this select menu</option>
+							<select id ="vies" class="custom-select">
+								<option selected></option>
 								<option value="1">Carrer</option>
 								<option value="2">Torrent</option>
 								<option value="3">Avinguda</option>
@@ -43,29 +42,29 @@
 
 						<div class="col-4">
 							<label for="">Nom</label>
-							<input type="text" class="form-control" id="">
+							<input type="text" class="form-control" id="nom_via">
 						</div>
 
 						<div class="col-4">
 							<label for="">Número</label>
-							<input type="text" class="form-control" id="">
+							<input type="text" class="form-control" id="numero_via">
 						</div>
 					</div>
 
 					<div class="form-row mb-4">
 						<div class="col-4">
 							<label for="">Pis</label>
-							<input type="text" class="form-control" id="">
+							<input type="text" class="form-control" id="pis">
 						</div>
 
 						<div class="col-4">
 							<label for="">Escala</label>
-							<input type="text" class="form-control" id="">
+							<input type="text" class="form-control" id="escala">
 						</div>
 
 						<div class="col-4">
 							<label for="">Porta</label>
-							<input type="text" class="form-control" id="">
+							<input type="text" class="form-control" id="porta">
 						</div>
 					</div>
 					
@@ -76,26 +75,20 @@
 					<div class="form-row mb-4">
 						<div class="col-4">
 							<label for="">CP</label>
-							<input type="text" class="form-control" id="">
+							<input type="text" class="form-control" id="cp">
 						</div>
 
 						<div class="col-4">
 							<label for="">Districte</label>
-							<select class="custom-select">
-								<option selected>Open this select menu</option>
-								<option value="1">One</option>
-								<option value="2">Two</option>
-								<option value="3">Three</option>
+							<select id="districtes" class="custom-select">
+								<option selected></option>
 							</select>
 						</div>
 
 						<div class="col-4">
 							<label for="">Barri</label>
-							<select class="custom-select">
-								<option selected>Open this select menu</option>
-								<option value="1">One</option>
-								<option value="2">Two</option>
-								<option value="3">Three</option>
+							<select id="barris" class="custom-select">
+								<option selected></option>
 							</select>
 						</div>
 					</div>
@@ -104,7 +97,7 @@
 						<div class="col-4">
 							<label for="">Població</label>
 							<select class="custom-select">
-								<option selected>Open this select menu</option>
+								<option selected></option>
 								<option value="1">One</option>
 								<option value="2">Two</option>
 								<option value="3">Three</option>
@@ -123,7 +116,7 @@
 					</div>
 
 					<div class="form-row mb-4">
-						<textarea>
+						<textarea id="textarea">
 
 						</textarea>
 					</div>
@@ -135,15 +128,16 @@
 			</div>
 
 			<div class="col-6 pt-5">
-				<h4 id="nomPis">Nom + barri, districte</h4>
-				<p id="dir">Via Nom Número Pis Escala Porta · CP · Districte · Barri · Pobliacio</p>
-				<p id="preu">300€</p>
-				<p>Text</p>
+				<h4 id="nomPis"></h4>
+				<p id="dir"></p>
+				<p id="preu"></p>
+				<p id="text"></p>
 
 			</div>
 		</div>
 	</div>
 
-
 </body>
+
+<script src="js/functions_pisos.js"></script>
 </html>
